@@ -77,9 +77,20 @@ def get_combinations(num_restr):
     return array_index_restriction_combination
 
 def get_ec_restr_combination(array_restrictions_functions):
+	array_index_restriction_combination = get_combinations(len(array_restrictions_functions))
+	array_sys_ec_restriction_combinations = np.zeros((len(array_restrictions_functions), 2))
+	i,j = array_sys_ec_restriction_combinations.shape
+	print(f"El array tiene {i} filas y {j} columnas")
 	
-	return
+	
+		
+	
 
-array_prueba = get_combinations(5)
-print(f"El valor del numero que pensé es {array_prueba[5,1]}")
-print(f"El valor del numero que pensé es {50*array_prueba[5,1]}")
+def array_generator_random():
+	return (np.random.choice(list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), size=(4, 2), replace=False))
+
+
+array_ex = array_generator_random()
+print(array_ex)
+
+get_ec_restr_combination(array_ex)
