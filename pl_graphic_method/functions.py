@@ -29,10 +29,11 @@ def is_positive_integer(text):
 		except ValueError:
 			print("Error. Try again.")
 			
-def
+
 
 
 # ----------------------    To print functions    ----------------------
+
 def print_function(array_function):
 	text_function = ''
 	for coefficient in range(len(array_function)):
@@ -46,6 +47,7 @@ def print_function(array_function):
 			text_function += text_aux
 	print(text_function)
 	return
+
 
 
 # ----------------------    To get information functions    ----------------------
@@ -78,3 +80,16 @@ def get_f_restrictions(var_number):
 		print_function(restriction)
 	# print(array_f_restrictions)
 	return array_f_restrictions
+
+def get_f_restrictions_ec_systems(array_f_restrictions):
+	array_f_restrictions_ec_systems = list(combinations(range(num_restrictions), num_variables))
+	row, columns = len(array_f_restrictions_ec_systems), len(array_f_restrictions_ec_systems[0])
+	for i in range(row):
+		current_row = []
+		for j in range(columns):
+			aux = array_f_restrictions_ec_systems[i][j]
+			aux_2 = array_f_restrictions[aux]
+			current_row.append(aux_2)
+			print(f"El valor en [{i}][{j}] es: {current_row[j]}")
+		array_f_restrictions_ec_systems[i] = tuple(current_row)
+	return array_f_restrictions_ec_systems
